@@ -1,5 +1,24 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+// Artis
+@font-face {
+    font-family: 'Artis';
+    src: url('/assets/fonts/artis.otf');
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
 
 // Variables
 @import 'variables';
@@ -7,11 +26,23 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+*::selection {
+    background: rgba($primary-color, 30%);
+    transition: .3s ease;
+}
+
+body, p, span {
+    font-family: 'Montserrat';
+}
+
 body {
     //background: #171923;
-    background: url('/assets/images/bg.png') #0a0a0a;
+    background: url('/assets/images/bg.png') fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #fff;
     overflow-x: hidden;
+    font-family: 'Montserrat';
 }
 
 a,
@@ -19,14 +50,52 @@ button {
     transition: .3s ease;
 }
 
+.btn.btn-primary {
+    background: rgba(0,0,0,0);
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    text-transform: uppercase;
+    transition: .3s ease;
+
+    &:hover {
+        color: $primary-color;
+        background: rgba($primary-color, 20%);
+        box-shadow: none;
+    }
+
+    &:focus {
+        color: #fff;
+        background: rgba($primary-color, 100%);
+        box-shadow: 0px 0px 14px rgba($primary-color, 35%);
+    }
+
+    &.btn-fill {
+        color: #fff;
+        background: rgba($primary-color, 100%);
+
+        &:hover {
+            background: $hover-color;
+            border-color: $hover-color;
+        }
+    }
+}
+
+.btn-repost:hover {
+    transform: translateY(-5px);
+
+    &:active {
+        transform: translateY(2px);
+    }
+}
+
 .bg-mask {
-    position: absolute;
+    position: fixed;
     z-index: -3;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .0), rgba(0, 0, 0, 1));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .0), rgba(0, 0, 0, .0));
 }
 
 .card {
@@ -39,12 +108,22 @@ input.form-control {
 }
 
 .navbar {
-    border-bottom: 1px solid;
-    border-bottom-color: #477485;
-    box-shadow: 5px 5px 35px;
-    animation: background 5s infinite alternate;
     padding-top: .7rem;
     padding-bottom: .7rem;
+    background: rgba(82, 65, 44, .2);
+    backdrop-filter: blur(3px);
+
+    .navbar-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    a.user-info {
+        padding: 10px 20px !important;
+        background: rgba(250, 250, 250, .05);
+        border-radius: 8px;
+    }
 
     .navbar-brand {
         margin-right: 8px;
@@ -56,11 +135,19 @@ input.form-control {
     }
 
     a {
-        margin-left: 5px;
+        margin-left: 10px;
+        font-family: 'Artis';
+        font-size: 17px;
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus {
+            color: $primary-color;
+        }
     }
 
-    a:hover {
-        color: rgba(250, 250, 250, 1);
+    .dropdown-toggle::after {
+        margin-left: 15px !important;
     }
 }
 
@@ -87,12 +174,13 @@ input.form-control {
 }
 
 .dropdown-menu {
-    background-color: rgba(250, 250, 250, .05);
-    backdrop-filter: blur(5px);
+    background-color: rgba(250, 250, 250, .15);
+    backdrop-filter: blur(10px) !important;
 
     .dropdown-item {
         color: #fff;
         transition: .3s ease;
+        width: 89%;
 
         &:hover {
             background: rgba(250, 250, 250, .05);
@@ -122,12 +210,7 @@ input.form-control {
 .game-tournament {
     height: 400px;
     transition: .3s ease;
-
-    &:hover {
-        transform: translate(-5px, -5px);
-        cursor: pointer;
-        box-shadow: 5px 5px 14px rgba(0, 0, 0, .5);
-    }
+    margin-bottom: 15px;
 
     .card {
         width: 100%;
@@ -137,6 +220,14 @@ input.form-control {
         align-items: center;
         border: none;
         border-radius: 8px;
+        box-shadow: 0px 0px 0px $primary-color;
+        transition: .3s ease;
+
+        &:hover {
+            transform: translate(-7px, -7px);
+            cursor: pointer;
+            box-shadow: 7px 7px 0px $primary-color;
+        }
 
         h3 {
             color: #fff;
@@ -145,9 +236,17 @@ input.form-control {
             z-index: 10;
             text-align: center;
             font-size: 27px;
-            width: 280px;
+            width: 200px;
             font-weight: 500;
-            font-family: Circe;
+            font-family: 'Artis';
+        }
+
+        p {
+            color: $primary-color;
+            position: relative;
+            z-index: 10;
+            opacity: .8;
+            font-weight: 600;
         }
 
         &:before {
@@ -158,8 +257,220 @@ input.form-control {
             top: 0;
             height: 100%;
             width: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, .8));
+            // background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, .8));
+            background: linear-gradient(to bottom, rgba(#000, 70%), rgba($primary-color, 30%) 100%);
             border-radius: 8px;
         }
     }
+}
+
+h3 {
+    &.title {
+        font-size: 35px;
+        color: $primary-color;
+        font-family: 'Artis';
+    }
+}
+
+.tournament-page {
+    h2 {
+        font-family: 'Artis';
+        font-size: 38px;
+    }
+
+    p {
+        font-size: 14px;
+        font-family: 'Montserrat';
+        letter-spacing: 2.3px;
+        line-height: 20px;
+    }
+}
+
+.contract {
+    display: flex;
+    align-items: center;
+    background: url('/assets/images/contractborder.svg');
+    background-size: cover;
+    height: 380px;
+    width: 398px;
+    padding: 10px;
+
+    .contact-body {
+        width: 80%;
+        margin: 0 auto;
+
+        h3 {
+            font-size: 25px;
+        }
+
+        div {
+            font-size: 17px;
+            height: 25px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+
+            &.check {
+                margin-left: 35px;
+            }
+
+            &.check:before {
+                content: " ";
+                position: absolute;
+                margin-left: -35px;
+                height: 24px;
+                width: 24px;
+                border-radius: 50%;
+                border: 2px solid #4C3B2A;
+                margin-top: 2px;
+            }
+
+            span {
+                color: $primary-color;
+            }
+        }
+
+        * {
+            font-family: 'Artis';
+        }
+
+        button {
+            width: 100%;
+            height: 47px;
+            margin-top: 29px;
+            font-size: 19px;
+            transition: .3s ease;
+            border: none;
+
+            &:hover {
+                background: $hover-color;
+            }
+
+            &:active {
+                transform: scale(.99);
+            }
+        }
+    }
+}
+
+.swal-modal {
+    background: rgba(22, 22, 22, 0.3);
+    backdrop-filter: blur(5px);
+
+    .swal-text {
+        color: #fff;
+        font-size: 17px;
+    }
+
+    .swal-button {
+        background: $primary-color;
+        box-shadow: none !important;
+
+        &:hover {
+            background: $hover-color;
+        }
+    }
+}
+
+.game-contract {
+    background: rgba($primary-color, 5%);
+    color: rgba(250,250,250,.7);
+    transition: .3s ease;
+    padding: 15px 25px;
+    border: 1px solid rgba($primary-color, 50%);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 98%;
+
+    &:hover {
+        transform: translate(-5px, -5px);
+        color: #fff;
+        background: rgba($primary-color, 15%);
+    }
+
+    h5 {
+        font-family: 'Artis';
+        margin-bottom: 0px;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    span {
+        color: rgba(#fff, 0%);
+        transform: translateX(-5px);
+        transition: .3s ease;
+    }
+
+    &:hover span {
+        color: rgba(#fff, 100%);
+        transform: none;
+    }
+}
+
+.btn-link {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $hover-color
+    }
+
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+
+
+@keyframes button-anim {
+    from {
+        color: inherit;
+    }
+
+    to {
+        color: rgba($hover-color, 100%);
+    }
+}
+
+.borders-styled {
+    &:before {
+        content: url('/assets/images/borderleft.svg');
+        position: absolute;
+        z-index: 1000;
+        height: 56px;
+        width: 0px;
+        left: -59px;
+        top: 15%;
+    }
+
+    &:after {
+        content: url('/assets/images/borderright.svg');
+        position: absolute;
+        z-index: 1000;
+        height: 56px;
+        width: 0px;
+        right: 0;
+        top: 15%;
+    }
+}
+
+.primary-text {
+    color: $primary-color !important;
+}
+
+.ruble {
+    font-size: 11px;
+    display: inline
+}
+
+// Timer
+
+#timer {
+    font-size: 55px;
+    margin-top: -10px;
+}
+.label {
+    font-size: 2.5rem;
+    padding-left: 0.25rem;
 }

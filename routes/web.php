@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\TournamentPlayers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TournamentsController;
 
@@ -28,4 +29,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resources([
     'tournaments' => TournamentsController::class,
+    'players' => \App\Http\Controllers\PlayersController::class,
 ]);
+
+Route::get('/tournaments/enter/{id}', function ($id) {
+    $isRegisteredOnTournament = TournamentPlayers::where('user', \Auth::user()->id)->count();
+    $tournament = \App\Models\Tournament::where('id', $id)->first();
+
+    return view('tournaments.enter', compact('tournament', 'isRegisteredOnTournament'));
+})->middleware('auth');

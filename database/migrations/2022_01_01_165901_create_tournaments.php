@@ -22,6 +22,9 @@ class CreateTournaments extends Migration
             $table->unsignedBigInteger('game');
             $table->foreign('game')->references('id')->on('games');
 
+            $table->unsignedBigInteger('card');
+            $table->foreign('card')->references('id')->on('game_cards');
+
             /*
              | Tournament information
              */
@@ -32,9 +35,10 @@ class CreateTournaments extends Migration
             $table->text('description')->nullable();
 
             /*
-             | Maximum players in tournament
+             | Play info
              */
             $table->integer('players_col')->default(10);
+            $table->integer('enter_price')->default(50);
 
             /*
              | Prizes for winners

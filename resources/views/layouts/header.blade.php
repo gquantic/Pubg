@@ -2,7 +2,7 @@
     <div class="container">
         <div class="d-flex align-items-center justify-content-start">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'PUBG') }}
+                <img src="{{ asset('/assets/images/logo.svg') }}" width="50px" alt="">
             </a>
             <span class="beta">BETA</span>
         </div>
@@ -36,15 +36,23 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle user-info d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <p style="display: inline; margin-bottom: 0px; margin-right: 15px;">
+                                {{ Auth::user()->balance }}<span class="mr-3" style="font-size: 11px;display: inline">₽</span>
+                            </p>
+                            <img src="https://yt3.ggpht.com/ytc/AAUvwnhWa7b0il3j1JG58yh3h_YdzYjp96s_diEqxdiq=s900-c-k-c0x00ffffff-no-rj"
+                                 width="40px" class="rounded-circle" alt="">
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="">
+                                Мой профиль
+                            </a>
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                Выйти
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -57,3 +65,5 @@
         </div>
     </div>
 </nav>
+
+<img src="/assets/images/headerelement.svg" alt="" style="width: 100%;">

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\game_card;
 use App\Models\Tournament;
 use App\Http\Requests\StoreTournamentRequest;
 use App\Http\Requests\UpdateTournamentRequest;
+use App\Models\TournamentPlayers;
+use Illuminate\Support\Facades\DB;
 
 class TournamentsController extends Controller
 {
@@ -47,9 +50,12 @@ class TournamentsController extends Controller
      */
     public function show(Tournament $tournament)
     {
-        return view('tournaments.show', [
-            'tournament' => Tournament::findOrFail($tournament->id)
-        ]);
+        $info = $this->getTournamentInformation($tournament->id);
+        $budget = $this->getTournamentBudget($tournament->id);
+        $card = Game_card::findOrFail($tournament->card);
+        $isRegisteredOnTournament = TournamentPlayers::where('id', \Auth::user()->id)->get();
+
+        return view('tournaments.show', compact('info', 'budget', 'card', 'isRegisteredOnTournament'));
     }
 
     /**
@@ -84,5 +90,30 @@ class TournamentsController extends Controller
     public function destroy(Tournament $tournament)
     {
         //
+    }
+
+    /**
+     * Get tournament information.
+     *
+     * @param $id
+     */
+    public function getTournamentInformation($id)
+    {
+        return [
+            'tournament' => Tournament::findOrFail($id)->first(), // Сам турнир
+            'details' => DB::table('tournaments_details')->where('tournament', $id), // Детали
+            'players' => DB::table('tournament_players')->where('tournament', '=', $id)->count(), // Кол-во игроков
+        ];
+    }
+
+    /**
+     * Get tournament budget.
+     *
+     * @param $id
+     */
+    public function getTournamentBudget($id)
+    {
+        $info = $this->getTournamentInformation($id);
+        return $info['tournament']['enter_price'] * $info['players'];
     }
 }
