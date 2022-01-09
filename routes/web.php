@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TournamentsController;
 
@@ -21,6 +22,11 @@ Route::get('/', function () {
 /*
  * Роутеры для всех страниц - прописать всё группами.
  */
+
+Route::get('/admin',function (){
+    return view('admin/index');
+})->name('admin');
+
 
 Auth::routes();
 
