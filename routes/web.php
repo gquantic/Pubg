@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 Route::get('/admin',function (){
     return view('admin/index');
-})->name('admin');
+})->name('admin')->middleware('admin');
 
 
 Auth::routes();
