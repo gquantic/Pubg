@@ -28,6 +28,10 @@ Route::get('/admin',function (){
     return view('admin/index');
 })->name('admin')->middleware('admin');
 
+Route::get('/admin/blockedusers', function (){
+    return view('admin/pages/blockedusers');
+})->name('banned')->middleware('admin');
+
 
 Auth::routes();
 
