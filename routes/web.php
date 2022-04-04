@@ -48,3 +48,12 @@ Route::get('/tournaments/enter/{id}', function ($id) {
 
     return view('tournaments.enter', compact('tournament', 'isRegisteredOnTournament'));
 })->middleware('auth');
+
+Route::prefix('additaccess')->middleware('unusualUser')->group(function () {
+    Route::resources([
+        'translations' => \App\Http\Controllers\TranslationController::class,
+        'users' => \App\Http\Controllers\UserController::class,
+    ]);
+
+    Route::view('/', 'privilege.panel');
+});

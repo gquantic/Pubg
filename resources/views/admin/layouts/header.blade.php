@@ -64,39 +64,24 @@
                     <div class="menu-title">Трансляции</div>
                 </a>
                 <ul>
-                    <li> <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Email</a>
+                    <li>
+                        <a href="{{ route('translations.index') }}"><i class="bx bx-right-arrow-alt"></i>Все трансляции</a>
                     </li>
-                    <li> <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Chat Box</a>
-                    </li>
-                    <li> <a href="app-file-manager.html"><i class="bx bx-right-arrow-alt"></i>File Manager</a>
-                    </li>
-                    <li> <a href="app-contact-list.html"><i class="bx bx-right-arrow-alt"></i>Contatcs</a>
-                    </li>
-                    <li> <a href="app-to-do.html"><i class="bx bx-right-arrow-alt"></i>Todo List</a>
-                    </li>
-                    <li> <a href="app-invoice.html"><i class="bx bx-right-arrow-alt"></i>Invoice</a>
-                    </li>
-                    <li> <a href="app-fullcalender.html"><i class="bx bx-right-arrow-alt"></i>Calendar</a>
+                    <li>
+                        <a href="{{ route('translations.create') }}"><i class="bx bx-right-arrow-alt"></i>Добавить трансляцию</a>
                     </li>
                 </ul>
             </li>
-            <li class="menu-label text-center">Пользователи</li>
+            <hr>
             <li>
-                <a href="widgets.html">
-                    <div class="parent-icon"><i class='fadeIn animated bx bx-user'></i>
-                    </div>
-                    <div class="menu-title">Widgets</div>
-                </a>
-            </li>
-            <li>
-                <a href="{{route('banned')}}">
+                <a href="{{ route('users.index') }}">
                     <div class="parent-icon"><i class='lni lni-users'></i>
                     </div>
-                    <div class="menu-title">Заблокированные пользователи</div>
+                    <div class="menu-title">Пользователи</div>
                 </a>
             </li>
             <li>
-                <a class="has-arrow" href="javascript:;">
+                <a class="has-arrow" href="javascript:void(0);">
                     <div class="parent-icon"><i class='lni lni-island'></i>
                     </div>
                     <div class="menu-title">Рах!аааат</div>
@@ -469,27 +454,27 @@
                 </div>
                 <div class="user-box dropdown">
                     <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
+{{--                        <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">--}}
                         <div class="user-info ps-3">
-                            <p class="user-name mb-0">Pauline Seitz</p>
+                            <p class="user-name mb-0">{{ \Illuminate\Support\Facades\Auth::user()->name }}</p>
 {{--                            <p class="designattion mb-0">Web Designer</p>--}}
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="javascript:;"><i class="bx bx-user"></i><span>Profile</span></a>
-                        </li>
-                        <li><a class="dropdown-item" href="javascript:;"><i class="bx bx-cog"></i><span>Settings</span></a>
-                        </li>
-                        <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-home-circle'></i><span>Dashboard</span></a>
-                        </li>
-                        <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-dollar-circle'></i><span>Earnings</span></a>
-                        </li>
-                        <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-download'></i><span>Downloads</span></a>
-                        </li>
-                        <li>
-                            <div class="dropdown-divider mb-0"></div>
-                        </li>
-                        <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
+{{--                        <li><a class="dropdown-item" href="javascript:;"><i class="bx bx-user"></i><span>Profile</span></a>--}}
+{{--                        </li>--}}
+{{--                        <li><a class="dropdown-item" href="javascript:;"><i class="bx bx-cog"></i><span>Settings</span></a>--}}
+{{--                        </li>--}}
+{{--                        <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-home-circle'></i><span>Dashboard</span></a>--}}
+{{--                        </li>--}}
+{{--                        <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-dollar-circle'></i><span>Earnings</span></a>--}}
+{{--                        </li>--}}
+{{--                        <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-download'></i><span>Downloads</span></a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <div class="dropdown-divider mb-0"></div>--}}
+{{--                        </li>--}}
+                        <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-log-out-circle'></i><span>Выход</span></a>
                         </li>
                     </ul>
                 </div>

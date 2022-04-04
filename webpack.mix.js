@@ -13,6 +13,6 @@ const mix = require('laravel-mix');
 
 mix.sass('resources/sass/app.scss', 'public/css')
     .js('resources/js/timer.js', 'public/js/end.js');
-//.js('resources/js/app.js', 'public/js')
+    // .js('resources/js/app.js', 'public/js');
 
 mix.minify('public/css/app.css');
