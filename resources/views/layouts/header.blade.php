@@ -40,7 +40,7 @@
                             <p style="display: inline; margin-bottom: 0px; margin-right: 15px;">
                                 {{ Auth::user()->balance }}<span class="mr-3" style="font-size: 11px;display: inline">₽</span>
                             </p>
-                            <img src="https://yt3.ggpht.com/ytc/AAUvwnhWa7b0il3j1JG58yh3h_YdzYjp96s_diEqxdiq=s900-c-k-c0x00ffffff-no-rj"
+                            <img src="https://a0.anyrgb.com/pngimg/1832/1388/thief-theft-avatar-heroes-silhouette-human-behavior-smile-icons-circle.png"
                                  width="40px" class="rounded-circle" alt="">
                         </a>
 

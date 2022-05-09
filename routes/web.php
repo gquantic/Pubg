@@ -16,9 +16,7 @@ use App\Http\Controllers\TournamentsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/home');
 
 /*
  * Роутеры для всех страниц - прописать всё группами.
