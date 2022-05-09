@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\game_card;
+use App\Models\Game_card;
 use App\Models\Tournament;
 use App\Http\Requests\StoreTournamentRequest;
 use App\Http\Requests\UpdateTournamentRequest;
