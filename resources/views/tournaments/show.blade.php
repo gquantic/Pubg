@@ -11,6 +11,9 @@
                 <div class="d-flex align-items-center justify-content-start">
                     <h2 class="mb-0 pb-0 mr-5">{{ $info['tournament']['title'] }}</h2>
                 </div>
+                <p class="mb-3 mt-3 bg-warning p-1 rounded-3" style="width:fit-content;">
+                    Стоимость входа: {{ $info['tournament']['enter_price'] }}<span class="ruble text-white">₽</span>
+                </p>
                 <p class="mt-2">{{ $info['tournament']['description'] }}</p>
                 <button class="btn btn-primary btn-fill ml-4 btn-repost d-flex align-items-center justify-content-start">
                     <div class="">Поделиться</div>
@@ -29,16 +32,24 @@
 
                         <h3 class="mt-4">Награды</h3>
                         <div class="prize">
-                            <span>Первое место:</span> {{ round(($budget / 100) * 15) + $info['tournament']['enter_price'] }}<span class="ruble text-white">₽</span>
+                            <span>Первое место:</span> {{ round(($budget / 100 * 15) + ($info['tournament']['enter_price'] * 1.2)) }}<span class="ruble text-white">₽</span>
                         </div>
                         <div class="prize">
-                            <span>Второе место:</span> {{ round(($budget / 100) * 10) + $info['tournament']['enter_price'] }}<span class="ruble text-white">₽</span>
+                            <span>Второе место:</span> {{ round(($budget / 100) * 10 + ($info['tournament']['enter_price'] * 1.2)) }}<span class="ruble text-white">₽</span>
                         </div>
                         <div class="prize">
-                            <span>Третье место:</span> {{ round(($budget / 100) * 5) + $info['tournament']['enter_price'] }}<span class="ruble text-white">₽</span>
+                            <span>Третье место:</span> {{ round(($budget / 100) * 5 + ($info['tournament']['enter_price'] * 1.2)) }}<span class="ruble text-white">₽</span>
                         </div>
 
-                        <button class="btn btn-primary btn-fill" onclick="window.location.href = '/tournaments/enter/{{ $info['tournament']['id'] }}'">зарегистрироваться</button>
+                        @if($isRegisteredOnTournament > 0)
+                            <button class="btn btn-primary btn-fill" disabled>
+                                Вы уже зарегистрированы
+                            </button>
+                        @else
+                            <button class="btn btn-primary btn-fill" onclick="window.location.href = '/tournaments/enter/{{ $info['tournament']['id'] }}'">
+                                зарегистрироваться
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>

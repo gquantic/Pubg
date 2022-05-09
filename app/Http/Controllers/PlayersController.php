@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tournament;
 use App\Models\TournamentPlayers;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -48,7 +49,7 @@ class PlayersController extends Controller
      */
     public function store(Request $request)
     {
-        if (TournamentPlayers::where('user', '=', Auth::user()->id)->exists())
+        if (TournamentPlayers::where('user', Auth::user()->id)->where('tournament', $request->tournament_id)->exists())
             return redirect()->back()->with('error', 'Вы уже зарегистрированы на этот турнир.');
 
         $player = new TournamentPlayers;
@@ -59,6 +60,12 @@ class PlayersController extends Controller
         $player->game_id = $request->user_id;
 
         $player->save();
+
+        // Достаём турнир
+        $tournament = Tournament::where('id', $request->tournament_id)->first();
+
+        // Редактируем баланс пользователя
+        User::where('id', Auth::id())->update(['balance' => Auth::user()->balance - $tournament['enter_price']]);
 
         return redirect('/home')->with('success', 'Вы успешно зарегистрировались!');
     }
@@ -106,5 +113,18 @@ class PlayersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getUserEnteredTournaments($id)
+    {
+        $tournamentsList = [];
+        $enteredTournamentsList = TournamentPlayers::where('user', $id)->get();
+
+        foreach ($enteredTournamentsList as $enteredTournament) {
+            $tournamentInfo = Tournament::where('id', $enteredTournament->tournament)->first();
+            $tournamentsList[] = $tournamentInfo;
+        }
+
+        return $tournamentsList;
     }
 }

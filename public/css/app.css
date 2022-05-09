@@ -11327,6 +11327,26 @@ button {
   transition: 0.3s ease;
 }
 
+.bg-warning {
+  background: #e5a65e !important;
+}
+
+a,
+i {
+  color: rgba(250, 250, 250, 0.8);
+}
+
+a {
+  margin-left: 10px;
+  font-family: "Artis";
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #e5a65e;
+}
+
 .btn.btn-primary {
   background: rgba(0, 0, 0, 0);
   border: 1px solid #e5a65e;
@@ -11722,4 +11742,10 @@ h3.title, .title.h3 {
 .label {
   font-size: 2.5rem;
   padding-left: 0.25rem;
+}
+
+.alert-warning {
+  color: #ffffff;
+  background-color: rgba(255, 243, 205, 0.05);
+  border-color: rgba(255, 236, 181, 0.15);
 }

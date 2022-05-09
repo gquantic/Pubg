@@ -7,7 +7,11 @@ use App\Models\Tournament;
 use App\Http\Requests\StoreTournamentRequest;
 use App\Http\Requests\UpdateTournamentRequest;
 use App\Models\TournamentPlayers;
+use Carbon\Carbon;
+use Date;
+use DateTime;
 use Illuminate\Support\Facades\DB;
+use View;
 
 class TournamentsController extends Controller
 {
@@ -18,7 +22,9 @@ class TournamentsController extends Controller
      */
     public function index()
     {
-        dd(Tournament::all());
+        $tournaments = Tournament::all();
+
+        return view('tournaments.index', compact('tournaments'));
     }
 
     /**
@@ -46,16 +52,28 @@ class TournamentsController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Tournament  $tournament
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Tournament $tournament)
     {
+        // Инфорация о турнире
         $info = $this->getTournamentInformation($tournament->id);
         $budget = $this->getTournamentBudget($tournament->id);
         $card = Game_card::findOrFail($tournament->card);
-        $isRegisteredOnTournament = TournamentPlayers::where('id', \Auth::user()->id)->get();
+        $isRegisteredOnTournament = TournamentPlayers::where('user', \Auth::user()->id)->where('tournament', $tournament->id)->count();
 
-        return view('tournaments.show', compact('info', 'budget', 'card', 'isRegisteredOnTournament'));
+        // Выделяем участников
+        $tournamentPlayers = TournamentPlayers::where('tournament', $info['tournament']->id)->get();
+
+        // Генерируем дату для проверки
+        $nowDate = date('Y-m-d H:i:s');
+
+        if ($info['tournament']->end_date < $nowDate) {
+            // Если турнир уже завершён
+            return View('tournaments.result', compact('info', 'budget', 'card', 'isRegisteredOnTournament', 'tournamentPlayers'));
+        } else {
+            return view('tournaments.show', compact('info', 'budget', 'card', 'isRegisteredOnTournament', 'tournamentPlayers'));
+        }
     }
 
     /**
@@ -100,7 +118,7 @@ class TournamentsController extends Controller
     public function getTournamentInformation($id)
     {
         return [
-            'tournament' => Tournament::findOrFail($id)->first(), // Сам турнир
+            'tournament' => Tournament::where('id', $id)->first(), // Сам турнир
             'details' => DB::table('tournaments_details')->where('tournament', $id), // Детали
             'players' => DB::table('tournament_players')->where('tournament', '=', $id)->count(), // Кол-во игроков
         ];

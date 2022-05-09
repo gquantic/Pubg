@@ -12,7 +12,12 @@ const mix = require('laravel-mix');
  */
 
 mix.sass('resources/sass/app.scss', 'public/css')
+<<<<<<< Updated upstream
     .js('resources/js/timer.js', 'public/js/end.js');
     // .js('resources/js/app.js', 'public/js');
+=======
+    .js('resources/js/timer.js', 'public/js/end.js')
+    .js('resources/js/app.js', 'public/js');
+>>>>>>> Stashed changes
 
 mix.minify('public/css/app.css');
