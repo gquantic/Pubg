@@ -22,8 +22,6 @@ if(isset($_GET['callback'])) {
         </div>
     ";
 
-    echo $emailContent;
-
     // устанавливаем тип сообщения Content-type, если хотим
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= "Content-type: text/html; charset=utf-8 \r\n";
