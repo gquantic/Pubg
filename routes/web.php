@@ -37,6 +37,9 @@ Route::get('/admin/blockedusers', function (){
 
 Route::view('/', 'land.index')->name('land-home');
 Route::view('/contacts', 'land.contacts')->name('land-contacts');
+Route::view('/vacancies', 'land.vacancies')->name('land-vacancies');
+Route::view('/terms', 'land.terms')->name('land-terms');
+Route::view('/offers', 'land.offers')->name('land-offers');
 
 
 Route::resource('faq', \App\Http\Controllers\FaqController::class);

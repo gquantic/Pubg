@@ -80,11 +80,11 @@
                 <div class="probootstrap-footer-widget probootstrap-link-wrap">
                     <h4 class="heading">Навигация</h4>
                     <ul class="stack-link">
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Профиль</a></li>
-                        <li><a href="#">Условия</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Предложения</a></li>
+                        <li><a href="/">О нас</a></li>
+                        <li><a href="{{ route('home') }}">Профиль</a></li>
+                        <li><a href="{{ route('land-terms') }}">Условия</a></li>
+                        <li><a href="{{ route('faq.index') }}">FAQ</a></li>
+                        <li><a href="{{ route('land-offers') }}">Предложения</a></li>
                     </ul>
                 </div>
             </div>
@@ -92,10 +92,10 @@
                 <div class="probootstrap-footer-widget">
                     <h4 class="heading">Сотрудничество</h4>
                     <ul class="stack-link">
-                        <li><a href="#">Наши проекты</a></li>
-                        <li><a href="#">Предложить игру</a></li>
-                        <li><a href="#">Вакансии</a></li>
-                        <li><a href="#">Организация турниров</a></li>
+{{--                        <li><a href="#">Наши проекты</a></li>--}}
+                        <li><a href="{{ route('land-contacts') }}">Предложить игру</a></li>
+                        <li><a href="{{ route('land-vacancies') }}">Вакансии</a></li>
+{{--                        <li><a href="#">Организация турниров</a></li>--}}
                     </ul>
                 </div>
             </div>
