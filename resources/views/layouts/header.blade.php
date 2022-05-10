@@ -66,4 +66,4 @@
     </div>
 </nav>
 
-<img src="/assets/images/headerelement.svg" alt="" style="width: 100%;">
+<img src="/assets/images/headerelement.svg" alt="" style="width: 100%;margin-top: -1px;">

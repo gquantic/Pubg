@@ -11402,7 +11402,7 @@ input.form-control {
 .navbar {
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
-  background: rgba(82, 65, 44, 0.2);
+  background: #100d08;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
 }
