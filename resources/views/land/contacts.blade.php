@@ -2,8 +2,8 @@
 
 if(isset($_GET['callback'])) {
     $emailContent = "
-        <div style='background: #000;width:fit-content;padding:15px 35px;border-radius:15px;'>
-            <table>
+        <div style='background: #000;width:100%;padding:15px 35px;border-radius:15px;'>
+            <table style='margin-bottom:15px;'>
                 <tr>
                     <td>
                         <img src='https://cygreat.ru/assets/images/logo.svg' width='35px' style='display:inline;'>
@@ -38,6 +38,7 @@ if(isset($_GET['callback'])) {
     @endphp
         <script>
             alert('Ваше письмо успешно отправлено');
+            window.location.href = '/contacts';
         </script>
     @php
 
