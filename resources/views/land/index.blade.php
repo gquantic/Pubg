@@ -28,13 +28,13 @@
                     </div>
                 </div>
             </li>
-            <li style="background-image: url('https://www.ixbt.com/img/r30/00/02/06/42/shot13.jpg');">
+            <li style="background-image: url('https://csgowfire.ru/uploads/posts/2017-10/1507230321_3d91bdca81498371a1ac2499f38d9494.jpg');">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <div class="slides-text probootstrap-animate">
                                 <h2><b><br>
-                                      <img src="https://kupihack.com/uploads/poster/games/0880b79926a4d1c2d4c6da6e5bdf4806.png" width="100px"
+                                      <img src="https://cheattrainer.ru/wp-content/uploads/2019/06/chit-na-warface-official-site-cheats.ru_.png" width="100px"
                                            style="width: 400px !important;margin: 0 auto;"
                                            alt="">
                                     </b></h2>
@@ -101,27 +101,27 @@
                 <div class="col-md-4 probootstrap-animate">
                     <div class="probootstrap-card">
                         <div class="probootstrap-card-text">
-                            <h2 class="probootstrap-card-heading mb0">A Clever Bike</h2>
-                            <p class="category">Design &amp; Model</p>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                            <h2 class="probootstrap-card-heading mb0">Murad Gapurovich</h2>
+                            <p class="category">Site Development</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 probootstrap-animate">
                     <div class="probootstrap-card">
                         <div class="probootstrap-card-text">
-                            <h2 class="probootstrap-card-heading mb0">Sleek Spaker</h2>
+                            <h2 class="probootstrap-card-heading mb0">Ali Gapurovich</h2>
                             <p class="category">Design</p>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 probootstrap-animate">
                     <div class="probootstrap-card">
                         <div class="probootstrap-card-text">
-                            <h2 class="probootstrap-card-heading mb0">Black Person</h2>
-                            <p class="category">Photography</p>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                            <h2 class="probootstrap-card-heading mb0">Tamerlan Umurdov</h2>
+                            <p class="category">Translator</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
