@@ -64,6 +64,10 @@ Route::middleware('auth')->group(function () {
 
         return view('tournaments.index', compact('tournaments', 'gameInfo'));
     });
+
+    Route::get('/pay-balance', function () {
+        return view('my.pay-balance');
+    });
 });
 
 Route::prefix('additaccess')->middleware('unusualUser')->group(function () {

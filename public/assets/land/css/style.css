@@ -1,4 +1,4 @@
-/*!==============================
+/*!==
  * Theme Name: Haus
  * Theme URL: https://probootstrap.com/haus-free-real-estate-html5-website-template
  * Version: 1.0
@@ -960,7 +960,7 @@ figure:hover figcaption, figure:focus figcaption {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  /* Better Font Rendering =========== */
+  /* Better Font Rendering ==== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e9f7";
@@ -987,7 +987,7 @@ figure:hover figcaption, figure:focus figcaption {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  /* Better Font Rendering =========== */
+  /* Better Font Rendering ==== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e9e3";
@@ -2120,7 +2120,7 @@ figure:hover figcaption, figure:focus figcaption {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  /* Better Font Rendering =========== */
+  /* Better Font Rendering ==== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
