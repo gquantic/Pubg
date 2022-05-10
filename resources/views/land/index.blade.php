@@ -98,29 +98,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 probootstrap-animate">
+                <div class="col-md-6 probootstrap-animate">
                     <div class="probootstrap-card">
                         <div class="probootstrap-card-text">
                             <h2 class="probootstrap-card-heading mb0">Murad Gapurovich</h2>
-                            <p class="category">Site Development</p>
+                            <p class="category">Разработка сайта & Дизайн проекта</p>
                             <p></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 probootstrap-animate">
-                    <div class="probootstrap-card">
-                        <div class="probootstrap-card-text">
-                            <h2 class="probootstrap-card-heading mb0">Ali Gapurovich</h2>
-                            <p class="category">Design</p>
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 probootstrap-animate">
+                <div class="col-md-6 probootstrap-animate">
                     <div class="probootstrap-card">
                         <div class="probootstrap-card-text">
                             <h2 class="probootstrap-card-heading mb0">Tamerlan Umurdov</h2>
-                            <p class="category">Translator</p>
+                            <p class="category">Учредитель</p>
                             <p></p>
                         </div>
                     </div>
