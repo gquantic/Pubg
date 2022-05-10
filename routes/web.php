@@ -20,28 +20,24 @@ use App\Http\Controllers\TournamentsController;
 |
 */
 
-<<<<<<< Updated upstream
 Route::redirect('/', '/home');
-=======
 Auth::routes();
->>>>>>> Stashed changes
 
 /*
  * Роутеры для всех страниц - прописать всё группами.
  */
 
-<<<<<<< Updated upstream
-Route::get('/admin',function (){
+Route::get('/admin', function (){
     return view('admin/index');
 })->name('admin')->middleware('admin');
 
 Route::get('/admin/blockedusers', function (){
     return view('admin/pages/blockedusers');
 })->name('banned')->middleware('admin');
-=======
+
 Route::view('/', 'land.index')->name('land-home');
 Route::view('/contacts', 'land.contacts')->name('land-contacts');
->>>>>>> Stashed changes
+
 
 Route::resource('faq', \App\Http\Controllers\FaqController::class);
 
@@ -65,10 +61,7 @@ Route::middleware('auth')->group(function () {
 
         return view('tournaments.index', compact('tournaments', 'gameInfo'));
     });
-
-<<<<<<< Updated upstream
-    return view('tournaments.enter', compact('tournament', 'isRegisteredOnTournament'));
-})->middleware('auth');
+});
 
 Route::prefix('additaccess')->middleware('unusualUser')->group(function () {
     Route::resources([
@@ -77,7 +70,7 @@ Route::prefix('additaccess')->middleware('unusualUser')->group(function () {
     ]);
 
     Route::view('/', 'privilege.panel');
-=======
+
     Route::get('/tournaments/enter/{id}', function ($id) {
         $isRegisteredOnTournament = TournamentPlayers::where('user', \Auth::user()->id)->where('tournament', $id)->count();
         $tournament = Tournament::where('id', $id)->first();
@@ -94,5 +87,4 @@ Route::prefix('additaccess')->middleware('unusualUser')->group(function () {
 
         });
     });
->>>>>>> Stashed changes
 });
