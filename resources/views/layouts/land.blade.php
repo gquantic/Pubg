@@ -131,6 +131,11 @@
                     </ul>
                 </div>
             </div>
+            <div class="col-md-12">
+                <a href="https://freekassa.ru" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.freekassa.ru/banners/big-red-2.png" title="Прием платежей на сайте">
+                </a>
+            </div>
         </div>
     </div>
 </footer>
