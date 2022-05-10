@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="theme-color" content="#110e09">
+    <meta name="theme-color" content="#120f0a">
     <link rel="icon" href="/assets/images/logo.svg">
 
     <title>{{ config('app.name', 'PUBG') }}</title>
