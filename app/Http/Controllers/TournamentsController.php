@@ -132,6 +132,6 @@ class TournamentsController extends Controller
     public function getTournamentBudget($id)
     {
         $info = $this->getTournamentInformation($id);
-        return $info['tournament']['enter_price'] * $info['players'];
+        return $info['tournament']['enter_price'] * $info['tournament']['players_col'];
     }
 }

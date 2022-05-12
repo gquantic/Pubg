@@ -32,13 +32,13 @@
 
                         <h3 class="mt-4">Награды</h3>
                         <div class="prize">
-                            <span>Первое место:</span> {{ round(($budget / 100 * 15) + ($info['tournament']['enter_price'] * 1.2)) }}<span class="ruble text-white">₽</span>
+                            <span>Первое место:</span> {{ round(($budget / 100) * $info['tournament']['first_prize']) }}<span class="ruble text-white">₽</span>
                         </div>
                         <div class="prize">
-                            <span>Второе место:</span> {{ round(($budget / 100) * 10 + ($info['tournament']['enter_price'] * 1.2)) }}<span class="ruble text-white">₽</span>
+                            <span>Второе место:</span> {{ round(($budget / 100) * $info['tournament']['second_prize']) }}<span class="ruble text-white">₽</span>
                         </div>
                         <div class="prize">
-                            <span>Третье место:</span> {{ round(($budget / 100) * 5 + ($info['tournament']['enter_price'] * 1.2)) }}<span class="ruble text-white">₽</span>
+                            <span>Третье место:</span> {{ round(($budget / 100) * $info['tournament']['third_prize']) }}<span class="ruble text-white">₽</span>
                         </div>
 
                         @if($isRegisteredOnTournament > 0)
