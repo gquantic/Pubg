@@ -14,7 +14,7 @@
                     </div>
                 </div>
             @else
-                <div class="col-6 mt-3 mb-2">
+                <div class="col-xl-6 col-lg-12 mt-3 mb-2">
                     <h3 class="title mb-3">Регистрация на турнир</h3>
                     <div class="card p-3 rounded-2">
                         <div class="borders-styled"></div>
