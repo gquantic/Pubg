@@ -48,6 +48,11 @@
                                 @if(Auth::user()->balance < $tournament->enter_price) disabled @endif>
                                     @if(Auth::user()->balance < $tournament->enter_price) Не достаточно средств @else Принять участие @endif
                             </button>
+                            @if(Auth::user()->balance < $tournament->enter_price) 
+                                <div style="width: 100%;text-align:center; margin: 12px 0;">
+                                    <a href="/pay-balance" style='text-align: center;' target='_blank'>Перейти к пополнению</a>
+                                </div>
+                            @endif
                             <p class="text-center mb-0 mt-3">
                                 С Вашего счёта <b>будет списано {{ $tournament->enter_price }}<span class="mr-3" style="font-size: 11px;display: inline">₽</span></b>
                                 за регистрацию

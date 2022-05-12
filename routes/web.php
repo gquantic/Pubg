@@ -70,6 +70,13 @@ Route::middleware('auth')->group(function () {
     });
 });
 
+Route::get('/tournaments/enter/{id}', function ($id) {
+        $isRegisteredOnTournament = TournamentPlayers::where('user', \Auth::user()->id)->where('tournament', $id)->count();
+        $tournament = Tournament::where('id', $id)->first();
+
+        return view('tournaments.enter', compact('tournament', 'isRegisteredOnTournament'));
+    })->middleware('auth');
+
 Route::prefix('additaccess')->middleware('unusualUser')->group(function () {
     Route::resources([
         'translations' => \App\Http\Controllers\TranslationController::class,

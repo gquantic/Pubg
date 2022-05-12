@@ -5,7 +5,7 @@
         <div class="row mt-3 d-flex justify-content-center">
             <div class="col-md-4">
                 <h3 class="title mb-4">Пополнение баланса</h3>
-                <form action="" class="form form-pay">
+                <!--form action="" class="form form-pay">
                     <div class="form-group">
                         <label for="">Введите сумму</label>
                         <input type="number" class="form-control mt-2">
@@ -17,6 +17,20 @@
                         <p>Запросить возврат средств можно на главной странице сайта в разделе "Контакты", обратившись
                             в
                             <a href="/contacts" style="font-size: 14.4px;font-family: 'Montserrat' !important;font-weight: 100;margin-left: 0px;
+                                                        text-transform: none;">
+                                техническую поддержку сайта</a>.</p>
+                    </div>
+                </form-->
+                <form action="" class="form form-pay">
+                    <div class="form-group">
+                        <p class="mt-4">Пополнение баланса временно проходит через менеджера.</p>
+                        <p class="mb-0">Напишите администратору в ВК свой ID <span style='color: orange; font-weight: 400;'>{{ \Auth::user()->id}}</span> и желаемую сумму пополнения. <a href='https://vk.com/holodok05' target='_blank'>Мурад Алиев</a></p>
+                        <div class='mt-2 mb-2'>
+                            <a href='https://vk.com/holodok05' target='_blank'>https://vk.com/holodok05</a>
+                        </div>
+                        <p>Запросить возврат средств можно на главной странице сайта в разделе "Контакты", обратившись
+                            в
+                            <a href="/contacts" style="font-size: 14.4px;font-family: 'Montserrat' !important;font-weight: 400;margin-left: 0px;
                                                         text-transform: none;">
                                 техническую поддержку сайта</a>.</p>
                     </div>
@@ -36,7 +50,7 @@
         }
 
         .form-pay p {
-            font-weight: lighter;
+            font-weight: 400;
         }
     </style>
 @endsection
