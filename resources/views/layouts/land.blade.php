@@ -35,7 +35,7 @@
             <img src="{{ asset('/assets/images/logo.svg') }}" width="50px" alt="">
         </a>
 
-        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
+        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Меню</i></a>
         <div class="mobile-menu-overlay"></div>
 
         <nav role="navigation" class="probootstrap-nav hidden-xs">
@@ -45,14 +45,16 @@
                 <li @if(Route::current()->getName() === 'land-contacts') class="active" @endif><a href="contacts">Контакты</a></li>
                 <li @if(Route::current()->getName() === 'faq.index') class="active" @endif><a href="{{ route('faq.index') }}">FAQ</a></li>
                 <li><a href="{{ route('home') }}">Мой профиль</a></li>
+                <li><a href="https://vk.com/cygreat" target="_blank"><i class="icon-vk"></i></a></li>
             </ul>
             <ul class="probootstrap-right-nav hidden-xs">
 {{--                <li><a href="#"><i class="icon-twitter"></i></a></li>--}}
 {{--                <li><a href="#"><i class="icon-facebook2"></i></a></li>--}}
-                <li><a href="https://vk.com/cygreat" target="_blank"><i class="icon-vk"></i></a></li>
+                <li><a href="/login" target="_blank" class='btn btn-primary btn-subscribe'>Войти</a></li>
+                <li><a href="/register" target="_blank" class='btn btn-primary btn-subscribe'>Регистрация</a></li>
             </ul>
             <div class="extra-text visible-xs">
-                <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
+                <a href="#" class="probootstrap-burger-menu"><i>Меню</i></a>
                 <h5>Мы в социальных сетях</h5>
                 <ul class="social-buttons">
 {{--                    <li><a href="#"><i class="icon-twitter"></i></a></li>--}}
