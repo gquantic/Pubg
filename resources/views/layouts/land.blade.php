@@ -10,8 +10,11 @@
 
     <title>{{ config('app.name', 'PUBG') }}</title>
 
-    <meta name="description" content="Free Bootstrap Theme by ProBootstrap.com">
-    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    <meta name="title" content="CyGREAT — онлайн киберспорт">
+    <meta name="description" content="CyGREAT — дословно, — Cyber Great — платформа киберспортивных турниров, вмещающая в себя множество разных игр, начиная от шутеров, до MMO- RPG!">
+    <meta name="keywords" content="турниры, пабг, кс, cs:go, tournaments, cs go, cs, киберспорт">
+
+    <link rel="icon" href="/assets/images/logo.svg">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
     <link rel="stylesheet" href="/assets/land/css/styles-merged.css">

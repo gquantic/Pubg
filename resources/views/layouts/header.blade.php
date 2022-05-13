@@ -7,8 +7,9 @@
             <span class="beta">BETA</span>
         </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon text-white">-</span>
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+{{--            <span class="navbar-toggler-icon text-white">-</span>--}}
+            <span class="text-white">Меню</span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
