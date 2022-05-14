@@ -3,12 +3,14 @@
 @section('content')
     <div class="container">
         <div class="row mt-3 d-flex justify-content-center">
+            @if (Auth::id() == 1)
             <div class="col-md-4">
                 <h3 class="title mb-4">Пополнение баланса</h3>
-                <!--form action="" class="form form-pay">
+                <form action="/pay-balance/go" class="form form-pay" method="post">
                     <div class="form-group">
+                        @csrf
                         <label for="">Введите сумму</label>
-                        <input type="number" class="form-control mt-2">
+                        <input type="number" class="form-control mt-2" name="amount">
                         <div class="w-100 d-flex justify-content-end">
                             <input type="submit" class="btn btn-primary mt-3" value="Пополнить">
                         </div>
@@ -20,7 +22,8 @@
                                                         text-transform: none;">
                                 техническую поддержку сайта</a>.</p>
                     </div>
-                </form-->
+                </form>
+                @else
                 <form action="" class="form form-pay">
                     <div class="form-group">
                         <p class="mt-4">Пополнение баланса временно проходит через менеджера.</p>
@@ -35,6 +38,7 @@
                                 техническую поддержку сайта</a>.</p>
                     </div>
                 </form>
+                @endif
             </div>
         </div>
     </div>
