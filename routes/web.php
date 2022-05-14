@@ -65,9 +65,15 @@ Route::middleware('auth')->group(function () {
         return view('tournaments.index', compact('tournaments', 'gameInfo'));
     });
 
+    /*
+     * Pay balance
+     */
+
     Route::get('/pay-balance', function () {
         return view('my.pay-balance');
     });
+
+    Route::post('/pay-balance/go', 'App\Http\Controllers\FreekassaController@pay');
 });
 
 Route::get('/tournaments/enter/{id}', function ($id) {
