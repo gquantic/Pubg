@@ -1,0 +1,26 @@
+.modal-content {
+  background: rgba(250, 250, 250, 0);
+  border: none;
+}
+.modal-content .modal-header {
+  border-bottom: 1px solid rgba(250, 250, 250, 0);
+}
+.modal-content .modal-header .modal-title {
+  font-weight: 600;
+  border-bottom: 2px solid #fff;
+}
+.modal-content .modal-footer {
+  border-top: none;
+}
+.modal-content .modal-footer .btn-secondary {
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid #fff;
+  font-weight: 600;
+  width: 125px;
+  border-radius: 0px;
+}
+
+.modal {
+  -webkit-backdrop-filter: blur(3px) !important;
+          backdrop-filter: blur(3px) !important;
+}
