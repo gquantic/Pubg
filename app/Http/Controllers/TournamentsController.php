@@ -7,6 +7,7 @@ use App\Models\Tournament;
 use App\Http\Requests\StoreTournamentRequest;
 use App\Http\Requests\UpdateTournamentRequest;
 use App\Models\TournamentPlayers;
+use App\Http\Controllers\MassPrizeControllerController;
 use Carbon\Carbon;
 use Date;
 use DateTime;
@@ -61,6 +62,7 @@ class TournamentsController extends Controller
         $budget = $this->getTournamentBudget($tournament->id);
         $card = Game_card::findOrFail($tournament->card);
         $isRegisteredOnTournament = TournamentPlayers::where('user', \Auth::user()->id)->where('tournament', $tournament->id)->count();
+        $massPrize = MassPrizeControllerController::get($info['tournament']['id']);
 
         // Выделяем участников
         $tournamentPlayers = TournamentPlayers::where('tournament', $info['tournament']->id)->get();
@@ -70,9 +72,9 @@ class TournamentsController extends Controller
 
         if ($info['tournament']->end_date < $nowDate) {
             // Если турнир уже завершён
-            return View('tournaments.result', compact('info', 'budget', 'card', 'isRegisteredOnTournament', 'tournamentPlayers'));
+            return View('tournaments.result', compact('info', 'budget', 'card', 'isRegisteredOnTournament', 'tournamentPlayers', 'massPrize'));
         } else {
-            return view('tournaments.show', compact('info', 'budget', 'card', 'isRegisteredOnTournament', 'tournamentPlayers'));
+            return view('tournaments.show', compact('info', 'budget', 'card', 'isRegisteredOnTournament', 'tournamentPlayers', 'massPrize'));
         }
     }
 
